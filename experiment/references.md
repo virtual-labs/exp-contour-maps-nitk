@@ -1,9 +1,9 @@
 <table style="text-align:justify;">
-  <tr style=”background-color: white”>
+    <tr style="background-color: white">    
     <th>References</th>
     <th>Contributors list</th>
   </tr>
-  <tr style=”background-color: white”>
+    <tr style="background-color: white">    
     <td>
     <ol>
     <li>P.C, Vargheese , “Engineering Geology for Civil Engineers”, PHI Learning Pvt Limited, New Delhi,2011.</li>
