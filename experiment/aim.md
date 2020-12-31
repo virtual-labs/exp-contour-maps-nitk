@@ -1,1 +1,1 @@
-### Aim of the experiment
+To describe the topographical cross-section of contour maps. 
