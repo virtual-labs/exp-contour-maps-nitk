@@ -1,0 +1,82 @@
+{
+
+   "details": [
+       {
+			"Experiment": "Analysis of Contour Maps",
+			"Lab": "Mining Geology Lab",
+			"Discipline": "Civil Engineering",
+			"Technology": "HTML, Javascript, CSS, JQuery"
+       }
+   ],
+
+   "developer": [
+       {
+      "Developer": "Dr. Pruthviraj U",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       }
+   ],
+
+   "contributer": [
+       {
+			"Contributer": "Akshaya",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+       {
+			"Contributer": "Swathi Shetty",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+       {
+			"Contributer": "Aishwarya Shetty",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+       {
+			"Contributer": "Aishwarya Hegde",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+   		 {
+			"Contributer": "Rithik Agarwal (17CV236)",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+	   	 {
+			"Contributer": "Vivek Kumar Khaya (17CV250)",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+	   	 {
+			"Contributer": "Abhishek Yadav (17CV202)",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+	   	 {
+			"Contributer": "Vibhu Singh (17CV248)",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+	   	 {
+			"Contributer": "Anakala Ramakanth",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+	   	 {
+			"Contributer": "Sushamitha Wadde",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       }
+   ]
+
+}

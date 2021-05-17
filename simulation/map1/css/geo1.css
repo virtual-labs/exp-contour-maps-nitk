@@ -1,0 +1,385 @@
+html
+{
+	-moz-user-select     : none;
+	-khtml-user-select   : none;
+	-webkit-user-select  : none;
+	-o-user-select       : none;
+	user-select          : none;
+}
+
+#scale{ position:absolute; top:130px; left:530px;cursor:pointer; }
+#direct{ position:absolute; top:170px; left:530px;cursor:pointer; }
+
+#scinff{  
+    /* padding: 50px;   */
+		position:absolute; 
+		top:130px; 
+		left:410px;   
+		display: none;  
+}
+#direction{
+	position:absolute; 
+	top:130px; 
+	left:430px;   
+	display: none; 
+}
+
+#mycanvas { 
+    cursor: pointer;
+	position: absolute;
+	left:40px;
+	top:120px;
+}
+
+#mycanvas2 { 
+    cursor: pointer;
+	position: absolute;
+	left:40px;
+	top:120px;
+	visibility:hidden;
+}
+
+#paper,#paper2{
+    background-color: #ffffff;
+}​
+
+/* #paper:active {  */
+    /* cursor: url("images/pencil1.png") 0 41,auto; */
+/* } */
+/* #paper:hover {  */
+    /* cursor: url("images/pencil1.png") 0 41,auto; */
+ /* } */
+#can45d{
+	transform:rotate(-90deg);
+}
+h5{
+    background-color:  #d5dbdb ;
+    width:300px;
+	border-radius:2px;
+	height:25px;
+	cursor:pointer;
+	font-family:verdana;
+	font-size:12px;
+}
+#accord1 h5{
+	background-color:  #d5dbdb ;
+    width:150px;
+	border-radius:2px;
+	height:30px;
+	cursor:pointer;
+	font-family:verdana;
+	font-size:12px;
+}
+
+
+
+#cmap:hover {
+    background-color:  #bfc9ca  ;
+	cursor:pointer;}
+	
+#lastmap:hover {
+    background-color:  #bfc9ca  ;
+	cursor:pointer;}
+
+	
+#scale:hover {
+    background-color: #F5F5F5 ;
+	cursor:pointer;}
+	
+#direct:hover {
+    background-color: #F5F5F5  ;
+	cursor:pointer;}
+	
+#cmap:active {
+    background-color:  #ffffff  ;
+	cursor:pointer;}
+	
+	
+#lastmap:active {
+    background-color:  #ffffff  ;
+	cursor:pointer;}
+	
+input[type=text]:focus 
+{
+	outline:none;
+	height:62px;
+	width:200px;
+}
+
+/* input[type=button] */
+/* { */
+	/* height:30px; */
+	/* width:100px; */
+/* } */
+#t7,#t8,#t9,#sp{
+	border-top-style: hidden;
+	border-right-style: hidden;
+	border-left-style: hidden;
+	border-bottom-style: hidden;
+}
+#regions td{
+		border-bottom-style: visible;
+}
+/* table */
+/* { */
+	/* border-collapse: collapse; */
+    /* width: 20%; */
+/* } */
+/* .tdstyle th,td */
+/* { */
+	/* border-bottom-style: hidden; */
+
+/* } */
+.tdstyle tr td:nth-child(1) {
+    background-color:  #d5dbdb ;
+	cursor:pointer;
+}
+	
+.tdstyle tr td:nth-child(1):hover {
+    background-color:  #bfc9ca  ;
+	cursor:pointer;
+}
+	
+.tdstyle tr td:nth-child(1):active {
+    background-color:  #ffffff  ;
+	cursor:pointer;
+}
+
+.lastpara{
+	position:absolute; 
+	font-family:verdana;
+	font-size:14px;
+	cursor:pointer;
+}	
+	
+#simscreen
+{
+	position: relative;
+	left:0px;
+	top:0px;
+	height: 600px; 
+	width:800px;
+	border:solid 1px;
+}
+
+.reg{
+	font-family:verdana;
+	font-size:14px;
+	width:30px;
+}
+.canvasclass
+{
+	position: absolute;
+	left:40px;
+	top:120px;
+}
+
+.dir
+{
+	position: absolute;
+	left:650px;
+	top:100px;
+	height: 200px; 
+	width:200px;
+}
+
+.tmr
+{
+	position: absolute;
+	left:30px;
+	top: 60px;
+	height: 100px; 
+	width:190px;
+	border:solid 1px;
+}
+
+#copyright{
+	position: absolute;
+	left:50px;
+	top: 580px;
+	font-family: verdana; 
+	font-size:12px
+}
+
+#title{
+	position:relative;
+	left: 0px;
+	top: 0px;
+	height:40px;
+	font-size: 24px;
+	text-align:center;
+	background-color: black;
+	color: White;
+	text-transform: uppercase; 
+}
+
+#title h3{
+	padding-top:2px;
+	margin:0px;
+}
+
+#container{
+    position:relative;
+    width:304px;
+    height:77px;
+    overflow:hidden;
+}
+
+#cmap{
+	text-align:center;
+	border:solid 1px;
+	background-color: #e8e6e7;
+	border-radius:5px;
+	cursor:pointer;
+}
+
+#lastmap{
+	position:absolute;
+	text-align:center;
+	border:solid 1px;
+	background-color: #e8e6e7;
+	border-radius:5px;
+	cursor:pointer;
+	font-family: verdana;
+	font-size:14px;
+	width:125px;
+	height:25px;
+	left:610px; 
+	top:260px;
+	visibility:hidden;
+}  
+
+.stepfont
+{
+	font-family: verdana;
+	font-size: 14px;
+}
+
+
+.simsubscreen
+{
+	position:absolute;
+	left: 50px;
+	top: 50px;
+	height:530px;
+	width:745px;
+}
+
+.incanvas
+{
+	margin:5px 0 0 5px;
+	padding:0;
+	font-family:verdana;
+}
+
+#paper,#paper2{
+		border:solid 1px;
+
+}
+
+#nextButton{
+    position: absolute;
+    left: 750px;
+    top: 530px;
+    cursor:pointer;
+}
+#nextButton1{
+    position: absolute;
+    left: 750px;
+    top: 530px;
+	cursor:pointer;
+}
+
+#prevButton{
+    position: absolute;
+    left: 0px;
+    top: 532px;
+	cursor:pointer;
+}
+
+
+.steptext
+{
+	display:inline;
+	font-size:14px;
+	font-family: verdana;
+}
+
+.steptext-6
+{
+	display:inline;
+	font-family: verdana;
+	font-size:14px;
+}
+
+.steptext-2
+{
+	display:inline;
+	font-family: verdana;
+	font-size:14px;
+
+}
+
+.circlebg
+{
+	border-radius:100%;
+	font-size:25px;
+	color:#fff;
+	text-align:center;
+	background:#000
+}
+
+#dialog-div{
+	position:absolute;
+	font-family: verdana;
+	font-size:14px;
+	background-color:white;
+	color:black;
+	height:120px;
+	width:527px;
+	top:200px;
+	left:120px;
+	border-radius: 10px;
+	border: 1px solid black;
+	visibility:hidden;
+}
+#dialog-div>input{
+	position:relative;
+	left:400px;
+}	
+.ttip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  font-family: verdana;
+	font-size:14px;
+}
+
+.ttip .ttiptext {
+	font-family: verdana;
+	font-size:14px;
+  visibility: hidden;
+  width: 500px;
+  background-color: black;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px 10px 10px 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 100;
+}
+.ttip:hover .ttiptext {
+  visibility: visible;
+}
+#question-div{
+	position: absolute;
+	border:solid 1px black;
+	background-color: lightgrey;
+	/* filter: alpha(opacity=55); */
+	color:black;
+	padding:10px;
+	visibility:hidden;
+	text-align:justify;
+	
+}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>SOLVE</title>
+<link rel="stylesheet" href="css/geo1.css" />
+<link rel="stylesheet" type="text/css" href="tipped.css" />
+<script type="text/javascript" src= "js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+
+<script>
+	var pointsab = [[50,300],
+				[160,400],
+				[240,500],
+				[350,600],
+				[520,600],
+				[620,500],
+				[720,400],
+				[840,300],
+				[930,300],
+				[1040,400],
+         		[1130,500],
+         		[1260,500],
+         		[1350,400],
+				[1470,300]];
+	var pointscd = [[50,200],
+					[150,300],
+					[260,400],
+					[360,500],
+                    [580,500],
+					[830,400],
+					[1130,300],
+					[1350,200]];
+
+	var markersab = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n'];
+	var markerscd = ['a','b','c','d','e','f','g','h'];
+var simsubscreennum=0;
+var temp=0,myInt;				
+</script>
+</head>
+<body style="margin:0">
+<!--Simulation Screen start		-->
+<div id="simscreen">
+
+<!--Title of Simulation		-->
+<div id="title"><h3>CONTOUR MAP</h3></div>
+<!-- <div class="canvasclass"> -->
+<!-- </div> -->
+<div class="simsubscreen" id="canvas0" >
+	<h4 class="incanvas" style="font-family:verdana;" >Objective:</h4>
+	<ol class="incanvas" style="font-family:verdana; font-size:14px;padding-left:15px;">
+		<li>Draw profiles along AB and CD.</li>
+		<li>Note: Use centimeter graph sheets. Horizontal and Vertical scales are the same.</li>
+	</ol>
+	<h4 class="incanvas" style="font-family:verdana;">Pre-requisites:</h4>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Topographic map</p>
+	<img style="position: absolute; left: 55px; top: 130px;" src="images/ctrmap.png"/>
+	<span class="ttip" style="border-bottom:1px dotted ; color:red;text-align:justify">Description
+	<span class="ttiptext">
+		<strong style="color:red">Contour lines</strong>: are curved, straight or a mixture of both lines on a map describing the intersection of a real or hypothetical surface with one or more horizontal planes.
+
+	</span>
+	</span>
+</div>
+
+<!--Step1	-->	
+<div class="simsubscreen" id="canvas1" style="visibility:hidden" >
+	<strong id="titlestep" class="incanvas">STEP </strong>
+	<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
+	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Identify the lines about which the profiles are to be drawn.</p>
+	<img id="fullmap" class="img1" style="position: absolute; left: 40px; top: 70px;" src="images/ctrmap.png"/>
+	<img id="ctr1" style="position: absolute; left: 40px; top: 70px;visibility:hidden" src="images/ctr1.png"/>
+	<img id="ctr2" style="position: absolute; left: 40px; top: 70px;visibility:hidden" src="images/ctr2.png"/>
+	<img id="cover" style="position: absolute; left: 35px; top: 60px;" src="images/cover.png"/>
+	<!-- <img id="cover" class="img1" style="position: absolute; left: 35px; top: 310px;" src="images/cover.png"/> -->
+	<p id="line" style="position: absolute; left: 35px; top: 420px;font-family:verdana; font-size:14px;">Lines to be considered for profiles to be drawn:</p>
+	<ol style="position: absolute; left: 35px; top: 440px;font-family:verdana; font-size:14px;visibility:hidden">
+		<li id="line1" >AB</li>
+		<li id="line2">CD</li>
+	</ol>
+	
+</div>
+
+<!--Step2	-->	
+<div class="simsubscreen" id="canvas2" style="visibility:hidden" >
+	<strong id="titlestep" class="incanvas">STEP </strong>
+	<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
+	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Mark all the points obtained by the intersection of the dotted line with the line AB and CD of the given contour map.</p>
+	<img id="map2" class="img1" style="position: absolute; left: 39px; top: 105px;" src="images/ctrmap.png"/>
+	<canvas id="paper" width="522" height="0" style="position: absolute; left: 57px; top: 191px;visibility:hidden;"></canvas>
+	<canvas id="paper2" width="522" height="0" style="position: absolute; left: 57px; top: 375px;visibility:hidden;"></canvas>
+	<img id="abplot" class="img1" style="position: absolute; left: 55px; top: 190px;visibility:hidden" src="images/abpic.PNG"/>
+	<img id="cdplot" class="img1" style="position: absolute; left: 55px; top: 374px;visibility:hidden" src="images/cdpic.PNG"/>
+	<p id="ln2" style="position: absolute; left: 35px; top: 60px;font-family:verdana; font-size:14px;"><strong>For AB:</strong></p>
+	<table id="abpoints" border="1px" style="position:absolute; left:600px; top:70px;font-family:verdana;font-size:14px;color:black;text-align:center;visibility:hidden;">
+		<tr>
+			<th>Points</th>
+			<th>X-Co</th>
+			<th>Y-Co</th>
+		</tr>
+		<tr>
+			<td>a</td>
+			<td>x1</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td>b</td>
+			<td>x2</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td>c</td>
+			<td>x3</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td>d</td>
+			<td>x4</td>
+			<td>600</td>
+		</tr>
+		<tr>
+			<td>e</td>
+			<td>x5</td>
+			<td>600</td>
+		</tr>
+		<tr>
+			<td>f</td>
+			<td>x6</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td>g</td>
+			<td>x7</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td>h</td>
+			<td>x8</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td>i</td>
+			<td>x9</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td>j</td>
+			<td>x10</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td>k</td>
+			<td>x11</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td>l</td>
+			<td>x12</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td>m</td>
+			<td>x13</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td>n</td>
+			<td>x14</td>
+			<td>300</td>
+		</tr>
+	</table>
+	<table id="cdpoints" border="1px" style="position:absolute; left:600px; top:70px;font-family:verdana;font-size:14px;color:black;text-align:center;visibility:hidden;">
+		<tr>
+			<th>Points</th>
+			<th>X-Co</th>
+			<th>Y-Co</th>
+		</tr>
+		<tr>
+			<td>a</td>
+			<td>x1</td>
+			<td>200</td>
+		</tr>
+		<tr>
+			<td>b</td>
+			<td>x2</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td>c</td>
+			<td>x3</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td>d</td>
+			<td>x4</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td>e</td>
+			<td>x5</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td>f</td>
+			<td>x6</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td>g</td>
+			<td>x7</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td>h</td>
+			<td>x8</td>
+			<td>200</td>
+		</tr>
+	</table>
+</div>
+
+
+
+<!--Step2	-->	
+<div class="simsubscreen" id="canvas3" style="visibility:hidden" >
+	<strong id="titlestep" class="incanvas">STEP </strong>
+	<span class="circlebg" id="stepnumber">&nbsp;3&nbsp;</span>
+	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Identify X-axis and Y-axis taking X as origin and define scale.</p>
+	
+</div>
+
+<div class="simsubscreen" id="canvas4" style="visibility:hidden" >
+	<strong id="titlestep" class="incanvas">STEP </strong>
+	<span class="circlebg" id="stepnumber">&nbsp;4&nbsp;</span>
+	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;<strong>For AB profile line</strong>: Plot the points taking its distance from X as x coordinate and the index values of the corresponding line as y coordinate.</p>
+	<table class="tdstyle" id="abtable" border="1px" style="position:absolute; left:600px; top:120px;font-family:verdana;font-size:14px;color:black;text-align:center;visibility:hidden;">
+		<tr>
+			<th>Points</th>
+			<th>X-Co</th>
+			<th>Y-Co</th>
+		</tr>
+		<tr>
+			<td id="a1">a</td>
+			<td>50</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td id="b1">b</td>
+			<td>160</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td id="c1">c</td>
+			<td>240</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td id="d1">d</td>
+			<td>350</td>
+			<td>600</td>
+		</tr>
+		<tr>
+			<td id="e1">e</td>
+			<td>520</td>
+			<td>600</td>
+		</tr>
+		<tr>
+			<td id="f1">f</td>
+			<td>620</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td id="g1">g</td>
+			<td>720</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td id="h1">h</td>
+			<td>840</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td id="i1">i</td>
+			<td>930</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td id="j1">j</td>
+			<td>1040</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td id="k1">k</td>
+			<td>1130</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td id="l1">l</td>
+			<td>1260</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td id="m1">m</td>
+			<td>1350</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td id="n1">n</td>
+			<td>1470</td>
+			<td>300</td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="simsubscreen" id="canvas5" style="visibility:hidden" >
+	<strong id="titlestep" class="incanvas">STEP </strong>
+	<span class="circlebg" id="stepnumber">&nbsp;5&nbsp;</span>
+	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;<strong>For AB profile line</strong>: Draw a line perpendicular to x axis passing through Y’, Now the graph shall bound between the y axis and the line through Y’. Join all the plotted points on the graph free hand.</p>
+</div>
+
+
+<div class="simsubscreen" id="canvas6" style="visibility:hidden" >
+	<strong id="titlestep" class="incanvas">STEP </strong>
+	<span class="circlebg" id="stepnumber">&nbsp;6&nbsp;</span>
+	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;<strong>For CD profile line</strong>: Plot the points taking its distance from X as x coordinate and the index values of the corresponding line as y coordinate.</p>
+	<table class="tdstyle" id="cdtable" border="1px" style="position:absolute; left:600px; top:120px;font-family:verdana;font-size:14px;color:black;text-align:center;visibility:hidden;">
+		<tr>
+			<th>Points</th>
+			<th>X-Co</th>
+			<th>Y-Co</th>
+		</tr>
+		<tr>
+			<td id="a2">a</td>
+			<td>50</td>
+			<td>200</td>
+		</tr>
+		<tr>
+			<td id="b2">b</td>
+			<td>150</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td id="c2">c</td>
+			<td>260</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td id="d2">d</td>
+			<td>360</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td id="e2">e</td>
+			<td>580</td>
+			<td>500</td>
+		</tr>
+		<tr>
+			<td id="f2">f</td>
+			<td>830</td>
+			<td>400</td>
+		</tr>
+		<tr>
+			<td id="g2">g</td>
+			<td>1130</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td id="h2">h</td>
+			<td>1350</td>
+			<td>200</td>
+		</tr>
+	</table>
+</div>
+
+<div class="simsubscreen" id="canvas7" style="visibility:hidden" >
+	<strong id="titlestep" class="incanvas">STEP </strong>
+	<span class="circlebg" id="stepnumber">&nbsp;7&nbsp;</span>
+	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;<strong>For CD profile line</strong>: Draw a line perpendicular to x axis passing through Y’, Now the graph shall bound between the y axis and the line through Y’. Join all the plotted points on the graph free hand.</p>
+</div>
+
+<div class="simsubscreen" id="canvas8" style="visibility:hidden" >
+<center><h2 style="font-family:verdana;">Profile View Graphs<h2></center></p>
+<span id="step81" style="border: 2px solid; position:absolute;top:60px; left:40px;font-family:verdana; font-size:14px;cursor:pointer;text-align:center;padding: 3px;border-radius: 3px;">Contour Map</span>
+<span id="step82" style="border: 2px solid; position:absolute;top: 60px; left:180px;font-family:verdana; font-size:14px;cursor:pointer;text-align:center;padding: 3px;border-radius: 3px;">Geographical Profile along AB</span>
+<span id="step83" style="border: 2px solid; position:absolute;top: 60px; left:440px;font-family:verdana; font-size:14px;cursor:pointer;text-align:center;padding: 3px;border-radius: 3px;">Geographical Profile along CD</span>
+<!-- <img id="ctmap" style="position: absolute; left: 55px; top: 120px;" src="images/ctrmap.PNG"/> -->
+<div id="resultContainer" style="height: 420px; width: 700px;left: 55px; top: 120px;"></div>
+</div>
+
+<span id="cmap"  style="position:absolute; left:660px; top:120px;font-family:verdana;font-size:14px;width:125px;height:35px;color:black;visibility:hidden" onclick="spanToDraw();">Get Paper</span>
+<div id="canvas-wrap-1" style="visibility:hidden">
+	<canvas id="mycanvas" width="605" height="400" border="1px;"></canvas>
+	<canvas id="mycanvas2" width="605" height="400" border="1px;"></canvas>
+	<canvas id="pencil" width="600" height="400" border="1px;"></canvas>
+	<img id="scale" style="visibility:hidden" src="images/scale.png">
+	<img id="scinff" src="images/scinff.png">
+	<img id="direct" style="visibility:hidden" src="images/direction.png">
+	<img id="direction" src="images/dir.png">
+</div>
+
+
+<!-- -----------------------AB and CD points pic ---------------->
+<img id="abpic" class="img1" style="position: absolute; left: 74px; top: 190px;visibility:hidden" src="images/abimg.png"/>
+<img id="cdpic" class="img1" style="position: absolute; left: 74px; top: 190px;visibility:hidden" src="images/cdimg.PNG"/>
+
+<!-- <div id="dialog-div"> -->
+	<!-- <dialog open> -->
+		<!-- <p><strong>Contour lines are curved, straight or a mixture of both lines on a map describing the intersection of a real or hypothetical surface with one or more horizontal planes.</strong></p> -->
+		<!-- <input type="button" value="OK" onclick = "hideDialog();"/> -->
+	<!-- </dialog> -->
+<!-- </div> -->
+
+<!-- -------------tooltip span -->
+<span id="tooltip-span"></span>
+<!-- <!-------next button-----------> 
+<div id="nav">
+	<img id="nextButton" onclick="navNext(); " src="images/Next.png" />
+</div>
+
+<!-- This is the questions division -->
+<span id="question-div">
+	 <p id="divq" style="font-family:verdana; font-size:14px;">Both ends of the pipe must be trimmed to ensure parallel faces.</p>
+	 <!-- <input type="button" style="cursor:pointer" value="OK" onclick = "evaluateAnswer();"> -->
+	 <p id="ans"></p>
+</span>
+
+<div id="copyright"> &copy; 2018 - <script>document.write(new Date().getFullYear())</script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div><script type="text/javascript" src= "js/geo1.js"></script>
+<script type="text/javascript" src= "js/geo1.js"></script>
+</div>
+</body>
+</html>
