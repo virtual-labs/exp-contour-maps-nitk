@@ -1,0 +1,46 @@
+[{
+	"question": "What is the elevation of point B?<br><img src=\"./images/eq16.png\"\/>",
+	"answers": {
+	"a": "800 ft",
+	"b": "1000 ft",
+	"c": "850 ft",
+	"d": "900 ft"
+	},
+	"correctAnswer": "d"
+}, {
+		"question": "What could be the lowest elevation in the depression?<br><img src=\"./images/eq17.png\"\/>",
+		"answers": {
+		"a": "800 ft",
+		"b": "1000 ft",
+		"c": "850 ft",
+		"d": "900 ft"
+		},
+		"correctAnswer": "c"
+}, {
+	"question": "What type of rock is present on the pointed region of the map shown below?<br><img src=\"./images/eq18.png\"\/>",
+	"answers": {
+		"a": "Banded Shale",
+		"b": "Shale",
+		"c": "Limestone",
+		"d": "Conglomerate"
+	},
+	"correctAnswer": "a"
+}, {
+	"question": "What is the contour interval of the map shown below?<br><img src=\"./images/eq19.png\"\/>",
+	"answers": {
+		"a": "500",
+		"b": "300",
+		"c": "100",
+		"d": "50"
+	},
+	"correctAnswer": "c"
+}, {
+	"question": "What is the elevation of the contour line pointed by the red arrow?<br><img src=\"./images/eq110.png\"\/>",
+	"answers": {
+		"a": "300",
+		"b": "400",
+		"c": "150",
+		"d": "550"
+	},
+	"correctAnswer": "b"
+}]
